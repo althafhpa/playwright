@@ -2,6 +2,8 @@ Playwright Visual Regression Testing
 
 This guide provides comprehensive instructions for setting up, configuring, and running visual regression tests using Playwright.
 
+You can start testing straightway using default config and providing baseline and comparison urls and path. 
+
 Table of Contents
 
 Setup
