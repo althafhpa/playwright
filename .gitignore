@@ -1,0 +1,26 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/public
+settings.json
+vcs.xml
+playwright/.auth/user.json
+.idea/
+.DS_Store
+
+# Ignore files ending with copy or backup (case-insensitive)
+**/*[cC]opy*
+**/*[bB]ackup*
+
+.env.local
+
+fixtures/urls
+
+/artifacts
+
+/artifacts-downloaded
+
+/trace-download
+

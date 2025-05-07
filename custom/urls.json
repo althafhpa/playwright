@@ -1,0 +1,466 @@
+[
+    {
+      "comparison": "about/faculties/health/who-we-are/contact-us",
+      "baseline": "about/faculties/health/who-we-are/contact-us",
+      "id": 1,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/faculties/health/who-we-are/contact-us/maps-and-locations",
+      "baseline": "about/faculties/health/who-we-are/contact-us/maps-and-locations",
+      "id": 2,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/faculties/health/who-we-are/health-alumni/deans-welcome",
+      "baseline": "about/faculties/health/who-we-are/health-alumni/deans-welcome",
+      "id": 3,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/faculties/health/who-we-are/honorary-professors",
+      "baseline": "about/faculties/health/who-we-are/honorary-professors",
+      "id": 4,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/faculties/law/who-we-are/honorary-appointments",
+      "baseline": "about/faculties/law/who-we-are/honorary-appointments",
+      "id": 5,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/faculties/science/outreach/outreach-and-community/mentor-science-plus-science-extension-program",
+      "baseline": "about/faculties/science/outreach/outreach-and-community/mentor-science-plus-science-extension-program",
+      "id": 6,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/faculties/science/outreach/outreach-and-community/student-insight-series",
+      "baseline": "about/faculties/science/outreach/outreach-and-community/student-insight-series",
+      "id": 7,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/leadership/academic-board",
+      "baseline": "about/leadership-governance/leadership/academic-board",
+      "id": 8,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/leadership/academic-board/academic-board-committees",
+      "baseline": "about/leadership-governance/leadership/academic-board/academic-board-committees",
+      "id": 9,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/leadership/academic-board/academic-board-forums",
+      "baseline": "about/leadership-governance/leadership/academic-board/academic-board-forums",
+      "id": 10,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/leadership/university-leadership-team/chief-operating-officer-and-vice-president",
+      "baseline": "about/leadership-governance/leadership/university-leadership-team/chief-operating-officer-and-vice-president",
+      "id": 11,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/leadership/university-leadership-team/deputy-vice-chancellor-and-vice-president-research",
+      "baseline": "about/leadership-governance/leadership/university-leadership-team/deputy-vice-chancellor-and-vice-president-research",
+      "id": 12,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/leadership/uts-council",
+      "baseline": "about/leadership-governance/leadership/uts-council",
+      "id": 13,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies",
+      "baseline": "about/leadership-governance/policies",
+      "id": 14,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z",
+      "baseline": "about/leadership-governance/policies/a-z",
+      "id": 15,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/academic-promotion-policy",
+      "baseline": "about/leadership-governance/policies/a-z/academic-promotion-policy",
+      "id": 16,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/acceptable-use-information-technology-resources-policy",
+      "baseline": "about/leadership-governance/policies/a-z/acceptable-use-information-technology-resources-policy",
+      "id": 17,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/accessibility-and-inclusion-policy",
+      "baseline": "about/leadership-governance/policies/a-z/accessibility-and-inclusion-policy",
+      "id": 18,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/campus-policy",
+      "baseline": "about/leadership-governance/policies/a-z/campus-policy",
+      "id": 19,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/commercial-activities-policy",
+      "baseline": "about/leadership-governance/policies/a-z/commercial-activities-policy",
+      "id": 20,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/coursework-assessments-policy",
+      "baseline": "about/leadership-governance/policies/a-z/coursework-assessments-policy",
+      "id": 21,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/coursework-assessments-procedure",
+      "baseline": "about/leadership-governance/policies/a-z/coursework-assessments-procedure",
+      "id": 22,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/recruitment-and-appointment-policy",
+      "baseline": "about/leadership-governance/policies/a-z/recruitment-and-appointment-policy",
+      "id": 23,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/research-intellectual-property-and-research-translation-procedure",
+      "baseline": "about/leadership-governance/policies/a-z/research-intellectual-property-and-research-translation-procedure",
+      "id": 24,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/research-policy",
+      "baseline": "about/leadership-governance/policies/a-z/research-policy",
+      "id": 25,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/research-training-program-scholarship-policy",
+      "baseline": "about/leadership-governance/policies/a-z/research-training-program-scholarship-policy",
+      "id": 26,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/risk-management-policy",
+      "baseline": "about/leadership-governance/policies/a-z/risk-management-policy",
+      "id": 27,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/a-z/sexual-harm-prevention-and-response-policy",
+      "baseline": "about/leadership-governance/policies/a-z/sexual-harm-prevention-and-response-policy",
+      "id": 28,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/policies/whats-new",
+      "baseline": "about/leadership-governance/policies/whats-new",
+      "id": 29,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/quality-and-standards",
+      "baseline": "about/leadership-governance/quality-and-standards",
+      "id": 30,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/quality-and-standards/addressing-foreign-inteference-risks",
+      "baseline": "about/leadership-governance/quality-and-standards/addressing-foreign-inteference-risks",
+      "id": 31,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/safe-community",
+      "baseline": "about/leadership-governance/safe-community",
+      "id": 32,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/safe-community/child-abuse-or-harm",
+      "baseline": "about/leadership-governance/safe-community/child-abuse-or-harm",
+      "id": 33,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/leadership-governance/web-statements/disclaimer",
+      "baseline": "about/leadership-governance/web-statements/disclaimer",
+      "id": 34,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/locations-facilities/after",
+      "baseline": "about/locations-facilities/after",
+      "id": 35,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/locations-facilities/business",
+      "baseline": "about/locations-facilities/business",
+      "id": 36,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/locations-facilities/campus/food-drink-retail/catering-campus",
+      "baseline": "about/locations-facilities/campus/food-drink-retail/catering-campus",
+      "id": 37,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/locations-facilities/chemical-technologies/our-facilities/analytical-suite",
+      "baseline": "about/locations-facilities/chemical-technologies/our-facilities/analytical-suite",
+      "id": 38,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/locations-facilities/data-arena",
+      "baseline": "about/locations-facilities/data-arena",
+      "id": 39,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/locations-facilities/elemental-bio-imaging-centre",
+      "baseline": "about/locations-facilities/elemental-bio-imaging-centre",
+      "id": 40,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/locations-facilities/quantum-materials-and-nanophotonics/our-team",
+      "baseline": "about/locations-facilities/quantum-materials-and-nanophotonics/our-team",
+      "id": 41,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/indigenous-staff-opportunities-career-advancement",
+      "baseline": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/indigenous-staff-opportunities-career-advancement",
+      "id": 42,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/indigenous-staff-opportunities-career-advancement/aurora-indigenous-scholars-international-scholarship-program",
+      "baseline": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/indigenous-staff-opportunities-career-advancement/aurora-indigenous-scholars-international-scholarship-program",
+      "id": 43,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/our-commitment",
+      "baseline": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/our-commitment",
+      "id": 44,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/post-graduate-opportunities-masters-or-phd-and-postgraduate-coursework/external-employment-opportunities",
+      "baseline": "about/uts-vision/initiatives/indigenous-education-and-research/indigenous-employment/post-graduate-opportunities-masters-or-phd-and-postgraduate-coursework/external-employment-opportunities",
+      "id": 45,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/internationalisation/global-engagement",
+      "baseline": "about/uts-vision/initiatives/internationalisation/global-engagement",
+      "id": 46,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/internationalisation/global-partnerships/uts-key-technology-partnerships/key-technology-partners",
+      "baseline": "about/uts-vision/initiatives/internationalisation/global-partnerships/uts-key-technology-partnerships/key-technology-partners",
+      "id": 47,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/internationalisation/global-partnerships/uts-key-technology-partnerships/programs-offered-our-key-technology-partners",
+      "baseline": "about/uts-vision/initiatives/internationalisation/global-partnerships/uts-key-technology-partnerships/programs-offered-our-key-technology-partners",
+      "id": 48,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/internationalisation/global-partnerships/uts-key-technology-partnerships/uts-key-technology-partnerships-visiting-fellow-program",
+      "baseline": "about/uts-vision/initiatives/internationalisation/global-partnerships/uts-key-technology-partnerships/uts-key-technology-partnerships-visiting-fellow-program",
+      "id": 49,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/internationalisation/global-partnerships/worldwide-universities-network",
+      "baseline": "about/uts-vision/initiatives/internationalisation/global-partnerships/worldwide-universities-network",
+      "id": 50,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/internationalisation/international-pathways",
+      "baseline": "about/uts-vision/initiatives/internationalisation/international-pathways",
+      "id": 51,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/leading-positive-change/breaking-down-cultural-barriers-through-art-and-design",
+      "baseline": "about/uts-vision/initiatives/leading-positive-change/breaking-down-cultural-barriers-through-art-and-design",
+      "id": 52,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/multicultural-womens-network/about-multicultural-womens-network/faqs",
+      "baseline": "about/uts-vision/initiatives/multicultural-womens-network/about-multicultural-womens-network/faqs",
+      "id": 53,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/multicultural-womens-network/events-and-community-connection",
+      "baseline": "about/uts-vision/initiatives/multicultural-womens-network/events-and-community-connection",
+      "id": 54,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/initiatives/multicultural-womens-network/say-my-name",
+      "baseline": "about/uts-vision/initiatives/multicultural-womens-network/say-my-name",
+      "id": 55,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/teaching/contacts",
+      "baseline": "about/uts-vision/teaching/contacts",
+      "id": 56,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/teaching/curriculum-design/improving-subject-design",
+      "baseline": "about/uts-vision/teaching/curriculum-design/improving-subject-design",
+      "id": 57,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    },
+    {
+      "comparison": "about/uts-vision/teaching/enhancing/first-year-experience-project",
+      "baseline": "about/uts-vision/teaching/enhancing/first-year-experience-project",
+      "id": 58,
+      "device": "desktop",
+      "width": 1000,
+      "height": 800
+    }
+]

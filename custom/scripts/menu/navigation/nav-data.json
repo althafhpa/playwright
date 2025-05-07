@@ -1,0 +1,16 @@
+[
+  {
+    "category": "Menu Placeholder",
+    "description": "Add Items to Menu in the JSON and update custom/scripts/menu/navigation/nav-data.json ",
+    "items": [
+      {
+        "name": "Visual Difference",
+        "description": "Visual Comparison Test",
+        "link": "/visual-diff/dashboard.html",
+        "icon": "",
+        "visible": true,
+        "status": "Planned"
+      }
+    ]
+  }
+]

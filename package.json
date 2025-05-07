@@ -1,0 +1,37 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:visual": "playwright test tests/visual-regression.spec.js",
+    "report": "node custom/scripts/generate-dashboard.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.10.7",
+    "express": "^5.1.0",
+    "open": "^10.1.2",
+    "reg-cli": "^0.18.10"
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.1.1",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.7.9",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
+    "fs": "^0.0.1-security",
+    "imghash": "^0.0.9",
+    "jimp": "^0.16.3",
+    "json-as-xlsx": "^2.5.6",
+    "node-fetch": "^3.3.2",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0",
+    "resemblejs": "^5.0.0",
+    "sharp": "^0.33.5",
+    "yargs": "^17.7.2"
+  }
+}

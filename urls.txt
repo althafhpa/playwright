@@ -1,0 +1,17 @@
+[
+  {
+    "comparison": "/',
+    "baseline": "/",
+    "id": 1
+  },
+  {
+    "comparison": "abc",
+    "baseline": "abc",
+    "id": 2
+  },
+  {
+    "comparison": "welcome",
+    "baseline": "about/welcome",
+    "id": 3
+  }
+]

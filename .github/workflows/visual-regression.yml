@@ -1,0 +1,214 @@
+name: Visual Regression
+
+on:
+  workflow_dispatch:
+
+env:
+  # Always prioritize secrets over hardcoded values
+  HTTP_USERNAME: ${{ secrets.HTTP_USERNAME}}
+  HTTP_PASSWORD: ${{ secrets.HTTP_PASSWORD}}
+  OKTA_CLIENT_ID: ${{ secrets.OKTA_CLIENT_ID}}
+  OKTA_USERNAME: ${{ secrets.OKTA_USERNAME}}
+  OKTA_PASSWORD: ${{ secrets.OKTA_PASSWORD}}
+  OKTA_ANSWER: ${{ secrets.OKTA_ANSWER}}
+  OKTA_DOMAIN: ${{ secrets.OKTA_DOMAIN}}
+  OKTA_REDIRECT_URI: ${{ secrets.OKTA_REDIRECT_URI' }}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    name: Prepare Test Matrix
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: CSV to JSON
+        run: |
+          if [ ! -f "./fixtures/urls.json" ]; then
+            echo "urls.json not found, converting CSV to JSON..."
+            node ./custom/scripts/csv-to-json.js ./fixtures/urls.csv
+            ls -l ./fixtures/
+          else
+            echo "urls.json already exists, skipping CSV conversion"
+          fi
+      - name: Generate URL chunks
+        run: |
+          mkdir -p fixtures/urls
+          node custom/scripts/generate-matrix-config.js
+          echo "Generated URL chunks:"
+          ls -l fixtures/urls/
+      - id: set-matrix
+        run: |
+          # Get all URL chunk numbers
+          CHUNKS=$(find ./fixtures/urls -name "urls-*.json" -not -name "urls-local.json" | \
+            sort -V | \
+            sed -e 's/.*urls-\([0-9]*\)\.json/\1/' | \
+            tr '\n' ',' | \
+            sed 's/,$//')
+
+          # Create the matrix JSON with projects and dynamic chunks
+          echo "matrix={\"project\":[\"chromium-desktop\",\"firefox-desktop\",\"webkit-desktop\",\"iphone-14-pro-max\",\"samsung-s23-ultra\"],\"urls_chunk\":[${CHUNKS}]}" >> $GITHUB_OUTPUT
+
+          # Display the generated matrix for verification
+          echo "Generated matrix with chunks: [${CHUNKS}]"
+      - name: Upload URL chunks
+        uses: actions/upload-artifact@v4
+        with:
+          name: urls-json
+          path: ./fixtures/urls/*.json
+          overwrite: true
+          retention-days: 1
+          if-no-files-found: error
+
+  test:
+    name: Run Visual Regression Tests
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Download URL chunks
+        uses: actions/download-artifact@v4
+        with:
+          name: urls-json
+          path: ./fixtures/urls
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Run baseline tests
+        id: baseline
+        run: |
+          npx playwright test visual-regression.spec.js --project=${{ matrix.project }} || echo "Some baseline tests failed but continuing"
+        env:
+          APP: baseline
+          URLS_FILE: urls-${{ matrix.urls_chunk }}.json
+
+      - name: Run comparison tests
+        id: comparison
+        run: |
+          # Add staggered delay to prevent concurrent Okta auth calls hitting rate limits
+          # Each chunk waits 30s longer than previous to space out the auth requests
+          # This ensures reliable authentication across parallel test runs
+          # Current delay is 30s per chunk
+          DELAY=$(((${{ matrix.urls_chunk }} - 1) * 15))
+          echo "Waiting ${DELAY} seconds before starting chunk ${{ matrix.urls_chunk }}"
+          sleep ${DELAY}
+          npx playwright test visual-regression.spec.js --project=${{ matrix.project }} || echo "Some comparison tests failed but continuing"
+        env:
+          APP: comparison
+          URLS_FILE: urls-${{ matrix.urls_chunk }}.json
+      - name: Process test results
+        run: |
+          echo "Test Summary:"
+          echo "Baseline tests status: ${{ steps.baseline.outcome }}"
+          echo "Comparison tests status: ${{ steps.comparison.outcome }}"
+      - name: Get json filename
+        id: json_filename
+        if: ${{ !cancelled() }}
+        run: |
+          filename="urls-${{ matrix.urls_chunk }}"
+          echo "filename=$filename" >> $GITHUB_OUTPUT
+      - name: Move results to reports-runner directory
+        run: |
+          mkdir -p ./reports-runner/${{ steps.json_filename.outputs.filename }}
+          mv ./public/visual-diff/test-results.json ./public/visual-diff/test-results-${{ matrix.urls_chunk }}-${{ matrix.project }}.json
+          mv -v ./public/visual-diff/* ./reports-runner/${{ steps.json_filename.outputs.filename }}
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports-runner-${{ steps.json_filename.outputs.filename }}-${{ matrix.project }}
+          path: ./reports-runner/${{ steps.json_filename.outputs.filename }}
+          overwrite: true
+          retention-days: 5
+          if-no-files-found: error
+
+  generate-report:
+    name: Generate Visual Regression Report
+    needs: test
+    runs-on: ubuntu-latest
+    if: always()
+   
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Download test artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: reports-runner-*
+          merge-multiple: true
+      
+      - name: Prepare report directory
+        run: |
+          mkdir -p public/visual-diff/screenshots/
+          # First copy all directories
+          cp -r artifacts/*/* public/visual-diff/screenshots/
+          # Then explicitly copy all JSON files
+          find artifacts -name "*.json" -exec cp {} public/visual-diff/ \;
+          # List files to verify
+          echo "Files in public/visual-diff after copying:"
+          ls -la public/visual-diff/
+     
+      - name: Process test results
+        run: |
+          echo "Processing test results..."
+          echo "Current directory: $(pwd)"
+          echo "Listing artifacts directory:"
+          ls -la artifacts/
+          echo "Listing public/visual-diff directory:"
+          ls -la public/visual-diff/ || echo "Directory doesn't exist yet"
+          
+          echo "Processing test results..."
+          node custom/scripts/merge-results.js
+          node custom/scripts/merge-traces.js
+          node custom/scripts/merge-failed-runners.js
+
+          echo "After merging, listing public/visual-diff directory:"
+          ls -la public/visual-diff/
+     
+      - name: Generate reports
+        run: |
+          echo "Copying Menu..."
+          node custom/scripts/copy-menu.js
+          echo "Generating reports..."
+          node custom/scripts/generate-dashboard.js
+          node custom/scripts/generate-compatibility-report.js
+          node custom/scripts/check-missed-urls.js
+      
+      - name: Upload final report with traces
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-report
+          path: ./public
+          retention-days: 5
+          if-no-files-found: error
