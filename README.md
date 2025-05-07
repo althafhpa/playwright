@@ -1,4 +1,5 @@
 Playwright Visual Regression Testing
+
 This guide provides comprehensive instructions for setting up, configuring, and running visual regression tests using Playwright.
 
 Table of Contents
