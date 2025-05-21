@@ -6,7 +6,7 @@ This guide provides comprehensive instructions for setting up, configuring, and 
 
   - Baseline and Comparison URLS in configuration file.
   
-  - Adding url paths for baseline and comparison testing.
+  - Adding URL paths for Baseline and Comparison testing.
 
 ![Screenshot of Playwright Visual Regression Report](./screenshots/screenshot-playwright-1.png "Playwright Visual Regression Report Example")
 
