@@ -282,6 +282,10 @@ Look for errors in the console output
 
 [fixtures/urls.json.txt](fixtures/urls.json.txt)
 
+The Project for matrix testing are in [playwright.config.js](playwright.config.js). 
+
+Add or Update browsers, viewport, devices to test in playwright.config.js
+
 
 
 
