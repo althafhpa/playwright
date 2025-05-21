@@ -130,15 +130,15 @@ All credentials are used as environment variables.
 
 Create a .env.local file in the project root with the following variables:
 
-Authentication Credentials
+**Authentication Credentials**
 
-# Basic Authentication
+**Basic Authentication**
 
 HTTP_USERNAME=your_username
 
 HTTP_PASSWORD=your_password
 
-# Okta Authentication
+**Okta Authentication**
 
 OKTA_CLIENT_ID=your_client_id
 
@@ -152,17 +152,25 @@ OKTA_DOMAIN=your_okta_domain
 
 OKTA_REDIRECT_URI=your_redirect_uri
 
-Test Configuration
+**Test Configuration**
 
-# Test mode: EMBED or FULL
+Test mode: EMBED or FULL
 
-TEST_MODE=EMBED
+Example: TEST_MODE=EMBED
 
-# URLs file for local testing
+**URLS File**
+
+For Local Testing:
 
 URLS_FILE=urls-local.json
 
-Example .env.local file:
+For GitHub Actions:
+
+URLS file is generated using script custom/scripts/generate-matrix-config.js in the workflow.
+
+**Envirnonment Variables:**
+
+File .env.local and for GitHub Actions use GitHub Secrets.
 
 HTTP_PASSWORD=your_password
 
@@ -260,17 +268,17 @@ Look for errors in the console output
 
 **More documentation:**
 
-Workflow:
+**Workflow:**
 
 [.github/workflows/visual-regression.md](.github/workflows/visual-regression.md)
 
-Environment Variables:
+**Environment Variables:**
 
 [env.md](env.md)
 
 [env.local.txt](env.local.txt)
 
-Sample URLS File:
+**Sample URLS File:**
 
 [fixtures/urls.json.txt](fixtures/urls.json.txt)
 
