@@ -1,10 +1,18 @@
-Playwright Visual Regression Testing
+**Playwright Visual Regression Testing**
 
 This guide provides comprehensive instructions for setting up, configuring, and running visual regression tests using Playwright.
 
-You can start testing straightway using default config and providing baseline and comparison urls and path. 
+**Start testing straightway by updating:**
 
-Table of Contents
+  - Baseline and Comparison URLS in configuration file.
+  
+  - Adding url paths for baseline and comparison testing.
+
+![Screenshot of Playwright Visual Regression Report](./screenshots/screenshot-playwright-1.png "Playwright Visual Regression Report Example")
+
+![Screenshot of Playwright Visual Regression Report](./screenshots/screenshot-playwright-2.png "Playwright Visual Regression Report Example")
+
+**Table of Contents**
 
 Setup
 
@@ -18,25 +26,25 @@ Viewing Reports
 
 GitHub Actions Workflow
 
-Setup
+**Setup**
 
-Clone the repository:
+**Clone the repository:**
 
 git clone git@github.com:althafhpa/playwright.git
 
-cd Playwright
-
-Install dependencies:
+**Install dependencies:**
 
 npm install
 
-Install Playwright browsers:
+**Install Playwright browsers:**
 
 npx playwright install --with-deps
 
-Configuration
+**Update Configuration**
 
-The main configuration is in config.js at the root of the project. This file contains settings for:
+The main configuration is in config.js at the root of the project. 
+
+This file contains settings for:
 
 Test URLs (baseline and comparison)
 
@@ -49,7 +57,6 @@ Authentication methods
 Reporting settings
 
 Server settings
-
 
 module.exports = {
   // URLs for testing environments
@@ -115,9 +122,13 @@ module.exports = {
   }
 };
 
-Environment Variables
+**Environment Variables**
 
-Environment variables can be used to override configuration settings. Create a .env.local file in the project root with the following variables:
+Some Environment variables can be used to override js configuration settings.
+
+All credentials are used as environment variables.
+
+Create a .env.local file in the project root with the following variables:
 
 Authentication Credentials
 
@@ -171,9 +182,9 @@ URLS_FILE=urls-local.json
 
 TEST_MODE=EMBED
 
-Running Tests
+**Running Tests**
 
-1. Prepare Test Data
+**1. Prepare Test Data**
 
 Convert your CSV file containing test URLs to JSON:
 
@@ -183,39 +194,31 @@ By default, this will convert ./fixtures/urls.csv to JSON. You can specify a dif
 
 node ./custom/scripts/csv-to-json.js ./fixtures/my-urls.csv
 
-2. Run Baseline Tests
+**2. Run Baseline Tests**
 
 Capture baseline screenshots:
 
 ./baseline.sh
 
-3. Run Comparison Tests
+**3. Run Comparison Tests**
 
 Capture comparison screenshots and compare with baseline:
 
 ./comparison.sh
 
-4. Generate Reports
+**4. Generate Reports**
 
-Generate visual regression reports:
+Generate visual regression reports and start server to view reports:
 
 ./report.sh
 
-Viewing Reports
+**GitHub Actions Workflow**
 
-After generating reports, you can view them by starting the server:
+The repository includes a GitHub Actions workflow for running visual regression tests in CI/CD. 
 
-node custom/scripts/start-server.js
+The workflow is defined in .github/workflows/visual-regression.yml.
 
-This will start a server on port 9222 (or the port specified in your config) and automatically open the dashboard in your browser. If it doesn't open automatically, navigate to:
-
-http://localhost:9222/visual-diff/dashboard.html
-
-GitHub Actions Workflow
-
-The repository includes a GitHub Actions workflow for running visual regression tests in CI/CD. The workflow is defined in .github/workflows/visual-regression.yml.
-
-The workflow:
+**The workflow file .github/workflows/visual-regression.yml:**
 
 Prepares test data by converting CSV to JSON
 
@@ -251,39 +254,25 @@ env:
   
   OKTA_REDIRECT_URI: ${{ secrets.OKTA_REDIRECT_URI || 'default_uri' }}
 
-  Troubleshooting
-If you encounter issues with image paths in the dashboard, check:
-
-The paths in the generated HTML
-
-The actual location of the image files
-
-The server configuration in custom/scripts/start-server.js
-
-For authentication issues:
-
-Verify your credentials in .env.local
-
-Check the authentication method in config.js
+**For issues:**
 
 Look for errors in the console output
 
+**More documentation:**
 
-Also check:
+Workflow:
 
-GitHub Workflow Details
+[.github/workflows/visual-regression.md](.github/workflows/visual-regression.md)
 
-.github/workflows/visual-regression.md
+Environment Variables:
 
-Environment Variables
+[env.md](env.md)
 
-env.md
+[env.local.txt](env.local.txt)
 
-env.local.txt
+Sample URLS File:
 
-Sample Json with URLs format for Test
-
-urls.txt
+[fixtures/urls.json.txt](fixtures/urls.json.txt)
 
 
 
