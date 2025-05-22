@@ -156,6 +156,8 @@ OKTA_REDIRECT_URI=your_redirect_uri
 
 Test mode: EMBED or FULL
 
+EMBED is basically a block or section of the page.
+
 Example: TEST_MODE=EMBED
 
 **URLS File**
